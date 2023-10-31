@@ -5,10 +5,12 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    console.log("useEffect called");
-  });
+    document.title = text;
+  }, [text]);
 
-  console.log("Component rendering");
+  useEffect(() => {
+    setTimeout(() => setCount(0), 5000);
+  }, []);
 
   return (<div>
     <button onClick={() => setCount((count) => count + 1)}>
